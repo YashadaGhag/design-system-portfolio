@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__de1b46ff-b10b-4f0b-9398-41cd484457b3__get_design_context",
+      "mcp__de1b46ff-b10b-4f0b-9398-41cd484457b3__get_screenshot",
+      "mcp__de1b46ff-b10b-4f0b-9398-41cd484457b3__use_figma",
+      "mcp__de1b46ff-b10b-4f0b-9398-41cd484457b3__search_design_system"
+    ]
+  }
+}

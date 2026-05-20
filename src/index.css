@@ -1,0 +1,52 @@
+/* @import must come first in PostCSS, then @config wires up the JS token file */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+/* ─── Base ─────────────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: theme(colors.neutral.800);
+    background-color: theme(colors.neutral.50);
+  }
+
+  h1 { font-size: 64px; line-height: 64px; font-weight: 700; }
+  h2 { font-size: 48px; line-height: 48px; font-weight: 700; }
+  h3 { font-size: 32px; line-height: 32px; font-weight: 600; }
+  h4 { font-size: 24px; line-height: 24px; font-weight: 600; }
+  h5 { font-size: 20px; line-height: 20px; font-weight: 600; }
+
+  h1, h2, h3, h4, h5 {
+    margin: 0;
+    color: theme(colors.neutral.900);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: theme(colors.primary.500);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: theme(colors.primary.600);
+  }
+}
