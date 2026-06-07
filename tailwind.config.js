@@ -3,6 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./stories/**/*.{js,ts,jsx,tsx}",
     "./.storybook/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
@@ -69,6 +70,18 @@ export default {
           800: "#003614",
           900: "#00280F",
         },
+        yellow: {
+          50:  "#FFF9E6",
+          100: "#FFF3CC",
+          200: "#FFE799",
+          300: "#FFDB66",
+          400: "#FFCF33",
+          500: "#FFC300",
+          600: "#CC9C00",
+          700: "#997500",
+          800: "#664E00",
+          900: "#4C3A00",
+        },
       },
 
       // ─── Typography ───────────────────────────────────────────────
@@ -111,10 +124,10 @@ export default {
       // ─── Border Radius ────────────────────────────────────────────
       borderRadius: {
         none: "0px",
-        xs: "4px", // was xs
-        sm: "8px",  // was s
-        md: "12px",  // was m
-        lg: "100px",  // was l
+        xs: "4px",
+        sm: "8px",
+        md: "12px",
+        lg: "100px",
       },
 
       // ─── Border Width ─────────────────────────────────────────────
@@ -126,7 +139,6 @@ export default {
       },
 
       // ─── Shadows ──────────────────────────────────────────────────
-      // Alpha values interpreted as percentages from Figma (e.g. 3 → 0.03)
       boxShadow: {
         card:      "0px 1px 2px 0px rgba(19,0,73,0.03), 0px 1px 5px 0px rgba(19,0,73,0.15)",
         button:    "0px 2px 4px 0px rgba(0,0,0,0.04), 0px 8px 32px -8px rgba(19,0,73,0.12)",
