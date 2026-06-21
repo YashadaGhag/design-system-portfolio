@@ -1,6 +1,12 @@
 import React from "react";
 import { Type } from "lucide-react";
-import { fontFamily, fontWeight, fontSize } from "../../src/tokens/typography";
+import {
+  fontFamily,
+  fontWeight,
+  fontSize,
+  responsiveTypography,
+  typographyBreakpoints,
+} from "../../src/tokens/typography";
 
 export default {
   title: "Design Tokens/Typography",
@@ -161,58 +167,86 @@ export const TypeRamp = () => (
         borderBottom: "2px solid #E1E2E6",
       }}
     >
-      Reference Table
+      Responsive Reference Table
     </h2>
+    <p style={{ color: "#686D82", margin: "0 0 16px", fontSize: 14 }}>
+      Font sizes across all 5 breakpoint modes from the Figma Typography collection.
+    </p>
 
-    <table
-      style={{
-        width: "100%",
-        borderCollapse: "collapse",
-        fontSize: 14,
-      }}
-    >
-      <thead>
-        <tr style={{ borderBottom: "2px solid #E1E2E6", textAlign: "left" }}>
-          <th style={{ padding: "8px 12px", fontWeight: 600 }}>Token</th>
-          <th style={{ padding: "8px 12px", fontWeight: 600 }}>Font Size</th>
-          <th style={{ padding: "8px 12px", fontWeight: 600 }}>Line Height</th>
-          <th style={{ padding: "8px 12px", fontWeight: 600 }}>Weight</th>
-          <th style={{ padding: "8px 12px", fontWeight: 600 }}>Tailwind Class</th>
-        </tr>
-      </thead>
-      <tbody>
-        {Object.entries(fontSize.heading).map(([key, val]) => (
-          <tr key={key} style={{ borderBottom: "1px solid #E1E2E6" }}>
-            <td style={{ padding: "8px 12px" }}>
-              <code style={{ fontWeight: 600 }}>{key}</code>
-            </td>
-            <td style={{ padding: "8px 12px", color: "#686D82" }}>{val.size}</td>
-            <td style={{ padding: "8px 12px", color: "#686D82" }}>{val.lineHeight}</td>
-            <td style={{ padding: "8px 12px", color: "#686D82" }}>{val.weight}</td>
-            <td style={{ padding: "8px 12px" }}>
-              <code style={{ background: "#EFF1FC", padding: "2px 6px", borderRadius: 4, fontSize: 12 }}>
-                text-{key}
-              </code>
-            </td>
+    <div style={{ overflowX: "auto" }}>
+      <table
+        style={{
+          width: "100%",
+          borderCollapse: "collapse",
+          fontSize: 14,
+          minWidth: 700,
+        }}
+      >
+        <thead>
+          <tr style={{ borderBottom: "2px solid #E1E2E6", textAlign: "left" }}>
+            <th style={{ padding: "8px 12px", fontWeight: 600 }}>Token</th>
+            <th style={{ padding: "8px 12px", fontWeight: 600 }}>Weight</th>
+            <th style={{ padding: "8px 12px", fontWeight: 600 }}>Tailwind Class</th>
+            {typographyBreakpoints.map((bp) => (
+              <th key={bp} style={{ padding: "8px 12px", fontWeight: 600, textAlign: "center" }}>
+                {bp}
+              </th>
+            ))}
           </tr>
-        ))}
-        {Object.entries(fontSize.body).map(([key, val]) => (
-          <tr key={key} style={{ borderBottom: "1px solid #E1E2E6" }}>
-            <td style={{ padding: "8px 12px" }}>
-              <code style={{ fontWeight: 600 }}>body-{key}</code>
-            </td>
-            <td style={{ padding: "8px 12px", color: "#686D82" }}>{val.size}</td>
-            <td style={{ padding: "8px 12px", color: "#686D82" }}>{val.lineHeight}</td>
-            <td style={{ padding: "8px 12px", color: "#686D82" }}>{val.weight}</td>
-            <td style={{ padding: "8px 12px" }}>
-              <code style={{ background: "#EFF1FC", padding: "2px 6px", borderRadius: 4, fontSize: 12 }}>
-                text-body-{key}
-              </code>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {Object.entries(responsiveTypography).map(([token, sizes]) => {
+            const isHeading = token.startsWith("h");
+            const weight = isHeading
+              ? (token === "h1" || token === "h2" ? fontWeight.bold : fontWeight.semibold)
+              : fontWeight.regular;
+            const weightLabel = isHeading
+              ? (token === "h1" || token === "h2" ? "bold (700)" : "semibold (600)")
+              : "regular (400)";
+            const tailwindClass = `text-${token}`;
+
+            return (
+              <tr key={token} style={{ borderBottom: "1px solid #E1E2E6" }}>
+                <td style={{ padding: "8px 12px" }}>
+                  <code style={{ fontWeight: 600 }}>{token}</code>
+                </td>
+                <td style={{ padding: "8px 12px", color: "#686D82" }}>{weightLabel}</td>
+                <td style={{ padding: "8px 12px" }}>
+                  <code
+                    style={{
+                      background: "#EFF1FC",
+                      padding: "2px 6px",
+                      borderRadius: 4,
+                      fontSize: 12,
+                    }}
+                  >
+                    {tailwindClass}
+                  </code>
+                </td>
+                {typographyBreakpoints.map((bp) => {
+                  const val = sizes[bp];
+                  const isChanged =
+                    val !== sizes["Desktop-XL"];
+                  return (
+                    <td
+                      key={bp}
+                      style={{
+                        padding: "8px 12px",
+                        textAlign: "center",
+                        color: isChanged ? "#576DDB" : "#686D82",
+                        fontWeight: isChanged ? 600 : 400,
+                      }}
+                    >
+                      {val}px
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   </div>
 );
 TypeRamp.storyName = "Type Ramp";

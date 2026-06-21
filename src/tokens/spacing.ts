@@ -14,6 +14,7 @@ export const spacing = {
   sp64:  "64px",
   sp80:  "80px",
   sp100: "100px",
+  sp200: "200px",
 } as const;
 
 export const spacingPx: Record<keyof typeof spacing, number> = {
@@ -28,4 +29,5 @@ export const spacingPx: Record<keyof typeof spacing, number> = {
   sp64:  64,
   sp80:  80,
   sp100: 100,
+  sp200: 200,
 };

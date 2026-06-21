@@ -96,6 +96,7 @@ export const spacing = {
   sp64:  "64px",
   sp80:  "80px",
   sp100: "100px",
+  sp200: "200px",
 };
 
 export const borderRadius = {

@@ -9,8 +9,8 @@ export default {
     docs: {
       description: {
         component:
-          "Top-level navigation bar with logo, navigation links, and authentication actions. " +
-          "Max width 1280 px with sp100 horizontal padding. Uses the primary Button for the CTA.",
+          "Responsive top-level navigation bar. Mobile: logo + hamburger menu with slide-down overlay. " +
+          "Desktop (md:768px+): horizontal layout with centered links and right-side actions.",
       },
     },
   },
@@ -38,6 +38,19 @@ export const CustomLinks = {
   },
 };
 
+export const Mobile = {
+  name: "Mobile",
+  parameters: {
+    viewport: { defaultViewport: "mobile1" },
+    docs: {
+      description: {
+        story:
+          "Mobile variant showing the hamburger icon. Click the menu icon to reveal the slide-down overlay with stacked nav links, Sign in, and CTA button.",
+      },
+    },
+  },
+};
+
 export const WithPageContent = {
   name: "With Page Content",
   parameters: {
@@ -50,7 +63,7 @@ export const WithPageContent = {
   render: (args) => (
     <div className="min-h-screen bg-neutral-50">
       <Navbar {...args} />
-      <main className="mx-auto max-w-[1280px] px-sp100 py-sp64">
+      <main className="mx-auto max-w-[1280px] px-sp16 py-sp64 md:px-sp100">
         <h1 className="text-h2 font-bold text-neutral-900 mb-sp16">
           Welcome to ApplyMate
         </h1>

@@ -7,7 +7,12 @@
       "mcp__de1b46ff-b10b-4f0b-9398-41cd484457b3__search_design_system",
       "mcp__de1b46ff-b10b-4f0b-9398-41cd484457b3__get_libraries",
       "PowerShell(Get-Process -Id \\(Get-NetTCPConnection -LocalPort 6006 -ErrorAction Stop\\).OwningProcess | Stop-Process -Force -Confirm:$false)",
-      "mcp__Claude_Preview__preview_start"
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm ls *)",
+      "Bash(npm install *)",
+      "mcp__de1b46ff-b10b-4f0b-9398-41cd484457b3__get_metadata",
+      "Bash(python -c \"import json,sys; data=json.load\\(sys.stdin\\); text=data[0]['text']; [print\\(line\\) for line in text.split\\('\\\\n'\\) if 'footer' in line.lower\\(\\) or 'Footer' in line]\")",
+      "Bash(node -e \"const fs=require\\('fs'\\); const d=JSON.parse\\(fs.readFileSync\\('C:/Users/yashd/.claude/projects/C--Users-yashd-my-design-system/db7fb117-ab15-4925-8962-ce627798017e/tool-results/mcp-de1b46ff-b10b-4f0b-9398-41cd484457b3-get_metadata-1782009742271.txt','utf8'\\)\\); const text=d[0].text; text.split\\('\\\\n'\\).filter\\(l=>l.toLowerCase\\(\\).includes\\('footer'\\)\\).forEach\\(l=>console.log\\(l\\)\\)\")"
     ]
   }
 }

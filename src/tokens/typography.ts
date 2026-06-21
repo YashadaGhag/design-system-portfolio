@@ -4,6 +4,9 @@
  * Collections:
  *   Base       – font family, font weight (string variables)
  *   Typography – font size, line height, paragraph spacing (float variables)
+ *
+ * Responsive sizes from Figma Typography collection (5 modes):
+ *   Desktop-XL, Desktop-L, Desktop, Tablet, Mobile
  */
 
 export const fontFamily = {
@@ -38,8 +41,29 @@ export const fontSize = {
   },
 } as const;
 
+export const typographyBreakpoints = [
+  "Desktop-XL",
+  "Desktop-L",
+  "Desktop",
+  "Tablet",
+  "Mobile",
+] as const;
+
+export const responsiveTypography = {
+  h1: { "Desktop-XL": 64, "Desktop-L": 64, "Desktop": 64, "Tablet": 48, "Mobile": 40 },
+  h2: { "Desktop-XL": 48, "Desktop-L": 48, "Desktop": 48, "Tablet": 32, "Mobile": 32 },
+  h3: { "Desktop-XL": 32, "Desktop-L": 32, "Desktop": 32, "Tablet": 28, "Mobile": 28 },
+  h4: { "Desktop-XL": 24, "Desktop-L": 24, "Desktop": 24, "Tablet": 24, "Mobile": 24 },
+  h5: { "Desktop-XL": 20, "Desktop-L": 20, "Desktop": 20, "Tablet": 20, "Mobile": 20 },
+  "body-large":  { "Desktop-XL": 16, "Desktop-L": 16, "Desktop": 16, "Tablet": 16, "Mobile": 16 },
+  "body-medium": { "Desktop-XL": 14, "Desktop-L": 14, "Desktop": 14, "Tablet": 14, "Mobile": 14 },
+  "body-small":  { "Desktop-XL": 12, "Desktop-L": 12, "Desktop": 12, "Tablet": 12, "Mobile": 12 },
+} as const;
+
 export const typography = {
   fontFamily,
   fontWeight,
   fontSize,
+  responsiveTypography,
+  typographyBreakpoints,
 } as const;
