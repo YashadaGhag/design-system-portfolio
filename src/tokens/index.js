@@ -5,7 +5,7 @@ export const colors = {
     200: "#BCC5F1",
     300: "#9AA7E9",
     400: "#798AE2",
-    500: "#576DDB",
+    500: "#5065D3",
     600: "#4657AF",
     700: "#344183",
     800: "#232C58",
@@ -53,7 +53,7 @@ export const colors = {
     200: "#99CFAD",
     300: "#66B783",
     400: "#339F5A",
-    500: "#008731",
+    500: "#047C30",
     600: "#006C27",
     700: "#00511D",
     800: "#003614",
@@ -117,7 +117,7 @@ export const borderWidth = {
 export const shadows = {
   card:      "0px 1px 2px 0px rgba(19,0,73,0.03), 0px 1px 5px 0px rgba(19,0,73,0.15)",
   button:    "0px 2px 4px 0px rgba(0,0,0,0.04), 0px 8px 32px -8px rgba(19,0,73,0.12)",
-  spotlight: "0px 0px 16px 8px rgba(87,109,219,0.48)",
+  spotlight: "0px 0px 16px 8px rgba(80,101,211,0.48)",
 };
 
 export const tokens = {

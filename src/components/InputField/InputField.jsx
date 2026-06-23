@@ -187,7 +187,7 @@ const InputField = ({
             className={cn(
               "flex-1 min-w-0 bg-transparent outline-none",
               "font-sans font-regular text-body-large",
-              "placeholder:text-neutral-300",
+              "placeholder:text-neutral-500",
               disabled ? "text-neutral-200 cursor-not-allowed" : "text-neutral-700"
             )}
             {...valueProps}

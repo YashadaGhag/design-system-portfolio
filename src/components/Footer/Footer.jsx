@@ -90,7 +90,7 @@ const Footer = ({
                   className="flex size-8 shrink-0 items-center justify-center rounded-sm"
                   style={{
                     backgroundImage:
-                      "linear-gradient(135deg, #BCC5F1 0%, #576DDB 100%)",
+                      "linear-gradient(135deg, #BCC5F1 0%, #5065D3 100%)",
                     filter: "drop-shadow(0px 0px 7.5px rgba(59,130,246,0.5))",
                   }}
                 >
