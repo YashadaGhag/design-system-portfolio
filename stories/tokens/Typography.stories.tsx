@@ -169,6 +169,22 @@ export const TypeRamp = () => (
     >
       Responsive Reference Table
     </h2>
+    <div
+      style={{
+        background: "#EFF1FC",
+        border: "1px solid #BCC5F1",
+        borderRadius: 8,
+        padding: "12px 16px",
+        margin: "0 0 16px",
+        fontSize: 13,
+        color: "#344183",
+        lineHeight: 1.5,
+      }}
+    >
+      <strong>Note:</strong> h1–h3 are responsive tokens — values change automatically at
+      breakpoints via CSS custom properties defined in <code style={{ background: "#DDE2F8", padding: "1px 4px", borderRadius: 3 }}>index.css</code>. No Tailwind
+      prefix needed; the browser applies the correct size at each viewport width.
+    </div>
     <p style={{ color: "#686D82", margin: "0 0 16px", fontSize: 14 }}>
       Font sizes across all 5 breakpoint modes from the Figma Typography collection.
     </p>

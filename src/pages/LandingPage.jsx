@@ -8,9 +8,9 @@ import {
   GitCompare,
   ShieldAlert,
   Camera,
-  Briefcase,
 } from "lucide-react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import Button from "../components/Button";
 import heroVideo from "../assets/hero-video.mp4";
 import jobRecommendationsImg from "../assets/Job Recommendations.png";
@@ -58,21 +58,21 @@ const FEATURES = [
     icon: ShieldAlert,
     title: "Ghost Post Detection",
     description:
-      "We flag listings that look fake, recycled, or perpetually open, so you don’t waste time on dead ends.",
+      "We flag listings that look fake, recycled, or perpetually open, so you don't waste time on dead ends.",
   },
   {
     icon: Camera,
     title: "Application Snapshots",
     description:
-      "Every submission is saved — resume, cover letter, drafted responses so you’re ready when interviews arrive weeks later.",
+      "Every submission is saved — resume, cover letter, drafted responses so you're ready when interviews arrive weeks later.",
   },
 ];
 
 function HeroSection() {
   return (
-    <section className="px-sp80 py-sp100">
-      <div className="mx-auto flex max-w-[1280px] items-center gap-sp40">
-        <div className="flex flex-1 min-w-0 flex-col items-start gap-sp32">
+    <section className="px-sp16 py-sp40 md:px-sp40 md:py-sp64 lg:py-sp100 xl:px-sp80 2xl:px-sp200">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-sp32 lg:flex-row lg:items-center lg:gap-sp40">
+        <div className="flex flex-col items-start gap-sp16 lg:flex-1 lg:min-w-0 lg:gap-sp32">
           <span className="inline-flex items-center gap-[8px] rounded-lg border border-primary-200 bg-white px-sp8 py-sp8">
             <Sparkles size={16} className="text-primary-500" />
             <span className="text-body-small font-regular text-primary-500">
@@ -105,7 +105,7 @@ function HeroSection() {
           </p>
         </div>
 
-        <div className="min-w-0 flex-1">
+        <div className="lg:flex-1 lg:min-w-0">
           <video
             className="w-full rounded-[16px] shadow-card"
             autoPlay
@@ -125,10 +125,10 @@ function HowItWorksSection() {
   return (
     <section
       id="how-it-works"
-      className="border-y border-primary-200 bg-primary-50 px-sp80 py-sp100"
+      className="border-y border-primary-200 bg-primary-50 px-sp16 py-sp40 md:px-sp40 md:py-sp64 lg:py-sp100 xl:px-sp80 2xl:px-sp200"
     >
       <div className="mx-auto max-w-[1280px]">
-        <div className="flex flex-col items-center gap-sp64">
+        <div className="flex flex-col items-center gap-sp40 md:gap-sp64">
           <div className="flex flex-col items-center gap-sp16 text-center">
             <h3 className="text-h3 font-semibold text-neutral-800">
               Your Intelligent Preparation Layer
@@ -139,7 +139,7 @@ function HowItWorksSection() {
             </p>
           </div>
 
-          <div className="grid w-full grid-cols-3 gap-sp24">
+          <div className="flex w-full flex-col gap-sp40 lg:grid lg:grid-cols-3 lg:gap-sp32">
             {HOW_IT_WORKS.map(({ image, icon: Icon, title, description }) => (
               <div key={title} className="flex flex-col gap-sp24">
                 <img
@@ -169,20 +169,23 @@ function HowItWorksSection() {
 
 function FeaturesSection() {
   return (
-    <section id="features" className="bg-white px-sp80 py-sp100">
+    <section
+      id="features"
+      className="bg-white px-sp16 py-sp40 md:px-sp40 md:py-sp64 lg:py-sp100 xl:px-sp80 2xl:px-sp200"
+    >
       <div className="mx-auto max-w-[1280px]">
-        <div className="flex flex-col items-center gap-sp64">
+        <div className="flex flex-col items-center gap-sp40 md:gap-sp64">
           <div className="flex flex-col items-center gap-sp16 text-center">
             <h3 className="text-h3 font-semibold text-neutral-800">
               Built for Quality, Not Volume
             </h3>
-            <p className="text-[18px] leading-[28px] font-regular text-neutral-500">
+            <p className="text-body-large font-regular text-neutral-500">
               We don&rsquo;t automate your identity. We provide the intelligence
               you need to make every application count.
             </p>
           </div>
 
-          <div className="grid w-full grid-cols-2 gap-sp40">
+          <div className="flex w-full flex-col gap-sp40 lg:grid lg:grid-cols-2 lg:gap-sp40">
             {FEATURES.map(({ icon: Icon, title, description }) => (
               <div key={title} className="flex items-start gap-sp16">
                 <div className="flex size-[40px] shrink-0 items-center justify-center rounded-sm border border-neutral-100 bg-neutral-50">
@@ -207,16 +210,13 @@ function FeaturesSection() {
 
 function FinalCTASection() {
   return (
-    <section className="bg-primary-900 px-sp80 py-sp100">
-      <div className="mx-auto flex max-w-[896px] flex-col items-center gap-sp24 text-center">
+    <section className="bg-primary-900 px-sp16 py-sp40 md:px-sp40 md:py-sp64 lg:py-sp100 xl:px-sp80 2xl:px-sp200">
+      <div className="mx-auto flex max-w-[896px] flex-col items-center gap-sp16 text-center lg:gap-sp24">
         <h2 className="text-h2 font-semibold text-white">
-          Ready to Job Search Without the
-          <br />
-          Burnout?
+          Ready to Job Search Without the Burnout?
         </h2>
-        <p className="text-h5 font-medium text-white">
+        <p className="text-body-large font-medium text-white lg:text-h5">
           Take back control of your applications. Let ApplyMate handle the
-          <br />
           tedious prep work.
         </p>
         <Button
@@ -225,56 +225,13 @@ function FinalCTASection() {
           icon={<ArrowRight size={18} />}
           className="border-primary-200 bg-primary-50 text-neutral-700"
         >
-          Get Started Free
+          Get started free
         </Button>
         <p className="text-body-medium font-regular text-neutral-100">
           No credit card required. Start matching with jobs today.
         </p>
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="pt-sp80">
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between px-sp100">
-        <a href="/" className="flex items-center gap-sp8 no-underline">
-          <span
-            className="flex size-8 shrink-0 items-center justify-center rounded-sm"
-            style={{
-              backgroundImage:
-                "linear-gradient(135deg, #BCC5F1 0%, #576DDB 100%)",
-              filter: "drop-shadow(0px 0px 7.5px rgba(59,130,246,0.5))",
-            }}
-          >
-            <Briefcase size={14} color="white" strokeWidth={2.5} />
-          </span>
-          <span className="text-body-large font-medium text-neutral-800">
-            ApplyMate
-          </span>
-        </a>
-
-        <p className="text-body-small font-regular text-neutral-500">
-          &copy; 2026 ApplyMate. All rights reserved.
-        </p>
-
-        <div className="flex gap-sp16">
-          <a
-            href="#"
-            className="text-body-small font-regular text-neutral-500 no-underline hover:text-primary-500"
-          >
-            Privacy Policy
-          </a>
-          <a
-            href="#"
-            className="text-body-small font-regular text-neutral-500 no-underline hover:text-primary-500"
-          >
-            Terms of Service
-          </a>
-        </div>
-      </div>
-    </footer>
   );
 }
 

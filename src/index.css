@@ -26,9 +26,40 @@
     background-color: theme(colors.neutral.50);
   }
 
-  h1 { font-size: 64px; line-height: 64px; font-weight: 700; }
-  h2 { font-size: 48px; line-height: 48px; font-weight: 700; }
-  h3 { font-size: 32px; line-height: 32px; font-weight: 600; }
+  :root {
+  --font-h1: 40px;
+  --leading-h1: 40px;
+  --font-h2: 32px;
+  --leading-h2: 32px;
+  --font-h3: 28px;
+  --leading-h3: 28px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --font-h1: 48px;
+    --leading-h1: 48px;
+    --font-h2: 32px;
+    --leading-h2: 32px;
+    --font-h3: 28px;
+    --leading-h3: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --font-h1: 64px;
+    --leading-h1: 64px;
+    --font-h2: 48px;
+    --leading-h2: 48px;
+    --font-h3: 32px;
+    --leading-h3: 32px;
+  }
+}
+
+  h1 { font-size: var(--font-h1); line-height: var(--leading-h1); font-weight: 700; }
+  h2 { font-size: var(--font-h2); line-height: var(--leading-h2); font-weight: 700; }
+  h3 { font-size: var(--font-h3); line-height: var(--leading-h3); font-weight: 600; }
   h4 { font-size: 24px; line-height: 24px; font-weight: 600; }
   h5 { font-size: 20px; line-height: 20px; font-weight: 600; }
 

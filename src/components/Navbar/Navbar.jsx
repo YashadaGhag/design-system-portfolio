@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { Briefcase, Menu, X } from "lucide-react";
+import { Briefcase, Menu, X, ChevronRight } from "lucide-react";
 import Button from "../Button/Button";
 
 const NAV_LINKS = [
@@ -14,7 +14,7 @@ const Navbar = ({ links = NAV_LINKS, onSignIn, onGetStarted, className = "" }) =
 
   return (
     <header className={`w-full bg-white shadow-button ${className}`}>
-      <nav className="mx-auto flex max-w-[1280px] items-center justify-between px-sp16 pb-sp24 pt-sp32 md:px-sp100">
+      <nav className="mx-auto flex items-center justify-between py-sp16 px-sp16 md:px-sp40 xl:px-sp80">
         {/* ── Logo ─────────────────────────────────────────────── */}
         <a href="/" className="flex items-center gap-sp8 no-underline">
           <span
@@ -72,34 +72,43 @@ const Navbar = ({ links = NAV_LINKS, onSignIn, onGetStarted, className = "" }) =
       </nav>
 
       {/* ── Mobile overlay ─────────────────────────────────── */}
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out md:hidden ${
-          mobileOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="mx-auto flex max-w-[1280px] flex-col gap-sp8 border-t border-neutral-100 px-sp16 pb-sp24 pt-sp16">
-          {links.map(({ label, href }) => (
-            <a
-              key={label}
-              href={href}
-              className="block rounded-sm px-sp8 py-sp12 text-body-medium font-medium text-neutral-800 no-underline transition-colors hover:bg-primary-50 hover:text-primary-500"
-            >
-              {label}
-            </a>
-          ))}
-          <hr className="my-sp8 border-neutral-100" />
-          <button
-            type="button"
-            onClick={onSignIn}
-            className="rounded-sm bg-transparent px-sp8 py-sp12 text-left text-body-medium font-medium text-neutral-700 transition-colors hover:text-primary-500 cursor-pointer border-none"
-          >
-            Sign in
-          </button>
-          <Button variant="primary" onClick={onGetStarted} className="w-full">
-            Get started free
-          </Button>
+      {mobileOpen && (
+        <div className="fixed inset-x-0 top-[64px] bottom-0 z-50 bg-white md:hidden">
+          <div className="flex h-full flex-col px-sp16">
+            <p className="py-sp16 text-body-small font-semibold uppercase tracking-wider text-neutral-400">
+              Menu
+            </p>
+
+            <div className="flex flex-col">
+              {links.map(({ label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  className="flex items-center justify-between py-sp16 text-body-large font-medium text-neutral-800 no-underline transition-colors hover:text-primary-500"
+                >
+                  {label}
+                  <ChevronRight size={20} className="text-neutral-700" />
+                </a>
+              ))}
+            </div>
+
+            <div className="flex-1" />
+
+            <div className="flex flex-col gap-sp12 pb-sp32">
+              <button
+                type="button"
+                onClick={onSignIn}
+                className="w-full cursor-pointer border-none bg-transparent py-sp12 text-center text-body-medium font-medium text-neutral-700 transition-colors hover:text-primary-500"
+              >
+                Sign in
+              </button>
+              <Button variant="primary" onClick={onGetStarted} className="w-full">
+                Get started free
+              </Button>
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 };

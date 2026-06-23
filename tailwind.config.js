@@ -95,9 +95,9 @@ export default {
         "body-large":               ["16px", { lineHeight: "24px" }],
         h5:                         ["20px", { lineHeight: "20px" }],
         h4:                         ["24px", { lineHeight: "24px" }],
-        h3:                         ["32px", { lineHeight: "32px" }],
-        h2:                         ["48px", { lineHeight: "48px" }],
-        h1:                         ["64px", { lineHeight: "64px" }],
+       'h3': ['var(--font-h3)', { lineHeight: 'var(--leading-h3)' }],
+        'h2': ['var(--font-h2)', { lineHeight: 'var(--leading-h2)' }],
+        'h1': ['var(--font-h1)', { lineHeight: 'var(--leading-h1)' }],
       },
       fontWeight: {
         regular:  "400",

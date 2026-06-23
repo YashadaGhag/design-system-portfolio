@@ -9,8 +9,13 @@ export default {
     docs: {
       description: {
         component:
-          "Responsive top-level navigation bar. Mobile: logo + hamburger menu with slide-down overlay. " +
-          "Desktop (md:768px+): horizontal layout with centered links and right-side actions.",
+          "Responsive top-level navigation bar.\n\n" +
+          "**Desktop (md:768px+):** Horizontal layout — logo left, centered links, right-side Sign in (text) + Get started free (primary CTA).\n\n" +
+          "**Mobile (<768px):** Logo + hamburger icon. Tapping hamburger reveals a full-height overlay with:\n" +
+          "- \"MENU\" label\n" +
+          "- Navigation links with chevron arrows (no dividers)\n" +
+          "- Bottom-anchored tertiary Sign in + primary Get started free CTA\n\n" +
+          "Responsive padding: `px-sp16 md:px-sp40 xl:px-sp80`. Vertical padding: `py-sp16`.",
       },
     },
   },
@@ -24,7 +29,30 @@ export default {
   },
 };
 
-export const Default = {};
+export const Default = {
+  name: "Desktop",
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Desktop variant: full horizontal nav with logo, centered links (How it works, Features, Pricing), Sign in text button, and Get started free primary CTA.",
+      },
+    },
+  },
+};
+
+export const Mobile = {
+  name: "Mobile",
+  parameters: {
+    viewport: { defaultViewport: "mobile1" },
+    docs: {
+      description: {
+        story:
+          "Mobile variant showing the hamburger icon. Click it to reveal the full-height overlay with MENU label, navigation links with chevron arrows, and bottom-anchored tertiary Sign in + primary Get started free CTA.",
+      },
+    },
+  },
+};
 
 export const CustomLinks = {
   name: "Custom Links",
@@ -38,32 +66,19 @@ export const CustomLinks = {
   },
 };
 
-export const Mobile = {
-  name: "Mobile",
-  parameters: {
-    viewport: { defaultViewport: "mobile1" },
-    docs: {
-      description: {
-        story:
-          "Mobile variant showing the hamburger icon. Click the menu icon to reveal the slide-down overlay with stacked nav links, Sign in, and CTA button.",
-      },
-    },
-  },
-};
-
 export const WithPageContent = {
   name: "With Page Content",
   parameters: {
     docs: {
       description: {
-        story: "Navbar shown above sample page content to demonstrate sticky/shadow behavior.",
+        story: "Navbar shown above sample page content to demonstrate shadow and spacing behavior.",
       },
     },
   },
   render: (args) => (
     <div className="min-h-screen bg-neutral-50">
       <Navbar {...args} />
-      <main className="mx-auto max-w-[1280px] px-sp16 py-sp64 md:px-sp100">
+      <main className="mx-auto max-w-[1280px] px-sp16 py-sp64 md:px-sp40 xl:px-sp80">
         <h1 className="text-h2 font-bold text-neutral-900 mb-sp16">
           Welcome to ApplyMate
         </h1>
