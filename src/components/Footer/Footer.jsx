@@ -69,6 +69,7 @@ AccordionSection.propTypes = {
 };
 
 const Footer = ({
+  variant = "default",
   productLinks = PRODUCT_LINKS,
   companyLinks = COMPANY_LINKS,
   className = "",
@@ -77,6 +78,32 @@ const Footer = ({
 
   const toggle = (section) =>
     setActiveSection((prev) => (prev === section ? null : section));
+
+  if (variant === "onboarding") {
+    return (
+      <footer className={`w-full bg-white ${className}`}>
+        <div className="mx-auto flex items-center justify-between border-t border-neutral-100 px-sp16 py-sp16 md:px-sp40 xl:px-sp80" style={{ height: 52 }}>
+          <span className="text-body-small text-neutral-500">
+            &copy; 2026 ApplyMate. All rights reserved.
+          </span>
+          <div className="flex items-center gap-sp24">
+            <a
+              href="#privacy"
+              className="text-body-small text-neutral-500 no-underline transition-colors hover:text-primary-500"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#terms"
+              className="text-body-small text-neutral-500 no-underline transition-colors hover:text-primary-500"
+            >
+              Terms of Service
+            </a>
+          </div>
+        </div>
+      </footer>
+    );
+  }
 
   return (
     <footer className={`w-full bg-white ${className}`}>
@@ -170,6 +197,7 @@ const Footer = ({
 };
 
 Footer.propTypes = {
+  variant: PropTypes.oneOf(["default", "onboarding"]),
   productLinks: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,

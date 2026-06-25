@@ -9,28 +9,42 @@ const NAV_LINKS = [
   { label: "Pricing", href: "#pricing" },
 ];
 
-const Navbar = ({ links = NAV_LINKS, onSignIn, onGetStarted, className = "" }) => {
+const Logo = () => (
+  <a href="/" className="flex items-center gap-sp8 no-underline">
+    <span
+      className="flex size-8 shrink-0 items-center justify-center rounded-sm"
+      style={{
+        backgroundImage:
+          "linear-gradient(135deg, #BCC5F1 0%, #5065D3 100%)",
+        filter: "drop-shadow(0px 0px 7.5px rgba(59,130,246,0.5))",
+      }}
+    >
+      <Briefcase size={14} color="white" strokeWidth={2.5} />
+    </span>
+    <span className="whitespace-nowrap text-body-large font-medium text-neutral-800">
+      ApplyMate
+    </span>
+  </a>
+);
+
+const Navbar = ({ variant = "default", links = NAV_LINKS, onSignIn, onGetStarted, className = "" }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  if (variant === "onboarding") {
+    return (
+      <header className={`w-full bg-white border-b border-neutral-100 ${className}`}>
+        <nav className="mx-auto flex items-center py-sp16 px-sp16 md:px-sp40 xl:px-sp80">
+          <Logo />
+        </nav>
+      </header>
+    );
+  }
 
   return (
     <header className={`w-full bg-white shadow-button ${className}`}>
       <nav className="mx-auto flex items-center justify-between py-sp16 px-sp16 md:px-sp40 xl:px-sp80">
         {/* ── Logo ─────────────────────────────────────────────── */}
-        <a href="/" className="flex items-center gap-sp8 no-underline">
-          <span
-            className="flex size-8 shrink-0 items-center justify-center rounded-sm"
-            style={{
-              backgroundImage:
-                "linear-gradient(135deg, #BCC5F1 0%, #5065D3 100%)",
-              filter: "drop-shadow(0px 0px 7.5px rgba(59,130,246,0.5))",
-            }}
-          >
-            <Briefcase size={14} color="white" strokeWidth={2.5} />
-          </span>
-          <span className="whitespace-nowrap text-body-large font-medium text-neutral-800">
-            ApplyMate
-          </span>
-        </a>
+        <Logo />
 
         {/* ── Desktop center links ───────────────────────────── */}
         <ul className="hidden list-none items-center gap-sp24 p-0 m-0 md:flex">
@@ -114,6 +128,7 @@ const Navbar = ({ links = NAV_LINKS, onSignIn, onGetStarted, className = "" }) =
 };
 
 Navbar.propTypes = {
+  variant: PropTypes.oneOf(["default", "onboarding"]),
   links: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,

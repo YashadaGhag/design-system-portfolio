@@ -66,6 +66,21 @@ export const CustomLinks = {
   },
 };
 
+export const Onboarding = {
+  name: "Onboarding",
+  args: {
+    variant: "onboarding",
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Onboarding variant: logo only, no nav links, no Sign In, no Get Started. Bottom border instead of shadow. Used on the onboarding flow pages.",
+      },
+    },
+  },
+};
+
 export const WithPageContent = {
   name: "With Page Content",
   parameters: {

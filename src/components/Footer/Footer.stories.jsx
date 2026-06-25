@@ -63,6 +63,21 @@ export const Mobile = {
   },
 };
 
+export const Onboarding = {
+  name: "Onboarding",
+  args: {
+    variant: "onboarding",
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Onboarding variant: single row (52px height) with copyright left, Privacy Policy + Terms of Service right. Top border, no accordion or social icons.",
+      },
+    },
+  },
+};
+
 export const WithPageContent = {
   name: "With Page Content",
   render: (args) => (

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import {
   Sparkles,
   ArrowRight,
@@ -68,7 +69,7 @@ const FEATURES = [
   },
 ];
 
-function HeroSection() {
+function HeroSection({ onGetStarted }) {
   return (
     <section className="px-sp16 py-sp40 md:px-sp40 md:py-sp64 lg:py-sp100 xl:px-sp80 2xl:px-sp200">
       <div className="mx-auto flex max-w-[1280px] flex-col gap-sp32 lg:flex-row lg:items-center lg:gap-sp40">
@@ -96,6 +97,7 @@ function HeroSection() {
             variant="primary"
             iconPosition="right"
             icon={<ArrowRight size={18} />}
+            onClick={onGetStarted}
           >
             Get started free
           </Button>
@@ -208,7 +210,7 @@ function FeaturesSection() {
   );
 }
 
-function FinalCTASection() {
+function FinalCTASection({ onGetStarted }) {
   return (
     <section className="bg-primary-900 px-sp16 py-sp40 md:px-sp40 md:py-sp64 lg:py-sp100 xl:px-sp80 2xl:px-sp200">
       <div className="mx-auto flex max-w-[896px] flex-col items-center gap-sp16 text-center lg:gap-sp24">
@@ -224,6 +226,7 @@ function FinalCTASection() {
           iconPosition="right"
           icon={<ArrowRight size={18} />}
           className="border-primary-200 bg-primary-50 text-neutral-700"
+          onClick={onGetStarted}
         >
           Get started free
         </Button>
@@ -236,13 +239,16 @@ function FinalCTASection() {
 }
 
 export default function LandingPage() {
+  const navigate = useNavigate();
+  const handleGetStarted = () => navigate("/onboarding");
+
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-      <HeroSection />
+      <Navbar onGetStarted={handleGetStarted} />
+      <HeroSection onGetStarted={handleGetStarted} />
       <HowItWorksSection />
       <FeaturesSection />
-      <FinalCTASection />
+      <FinalCTASection onGetStarted={handleGetStarted} />
       <Footer />
     </div>
   );

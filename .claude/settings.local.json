@@ -18,7 +18,9 @@
       "Bash(grep -oE 'id=\\\\\\\\\"2[0-9]{3}:[0-9]+\\\\\\\\\"[^>]*name=\\\\\\\\\"[^\\\\\\\\]*\\\\\\\\\"' \"C:\\\\Users\\\\yashd\\\\.claude\\\\projects\\\\C--Users-yashd-my-design-system\\\\aa685d14-1aa0-4564-ae0c-53c9587bf193\\\\tool-results\\\\b1agcmwsv.txt\")",
       "PowerShell(Stop-Process -Id 38040 -Force)",
       "Bash(node -e \"const l = require\\('lucide-react'\\); const names = Object.keys\\(l\\).filter\\(k => k.toLowerCase\\(\\).includes\\('facebook'\\) || k.toLowerCase\\(\\).includes\\('linkedin'\\)\\); console.log\\(names\\);\")",
-      "Bash(node -e \"import\\('lucide-react'\\).then\\(m => { const names = Object.keys\\(m\\).filter\\(k => k.toLowerCase\\(\\).includes\\('facebook'\\) || k.toLowerCase\\(\\).includes\\('linkedin'\\)\\); console.log\\(names\\); }\\)\")"
+      "Bash(node -e \"import\\('lucide-react'\\).then\\(m => { const names = Object.keys\\(m\\).filter\\(k => k.toLowerCase\\(\\).includes\\('facebook'\\) || k.toLowerCase\\(\\).includes\\('linkedin'\\)\\); console.log\\(names\\); }\\)\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"C:\\\\Users\\\\yashd\\\\my-design-system\\\\src\\\\components\\\\CompanyMatchAnimation\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
     ]
   }
 }
