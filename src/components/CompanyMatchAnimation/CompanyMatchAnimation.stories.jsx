@@ -2,7 +2,7 @@ import { MemoryRouter } from "react-router-dom";
 import CompanyMatchAnimation from "./CompanyMatchAnimation";
 
 export default {
-  title: "Components/CompanyMatchAnimation",
+  title: "Design System/CompanyMatchAnimation",
   component: CompanyMatchAnimation,
   tags: ["autodocs"],
   parameters: {

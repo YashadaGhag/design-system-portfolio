@@ -2,7 +2,7 @@ import { useState } from "react";
 import Checkbox from "./Checkbox";
 
 export default {
-  title: "Components/Checkbox",
+  title: "Design System/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
   parameters: {

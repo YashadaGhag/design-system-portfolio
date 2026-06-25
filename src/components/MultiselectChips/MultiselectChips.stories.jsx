@@ -13,7 +13,7 @@ const StatefulChips = (args) => {
 };
 
 export default {
-  title: "Components/MultiselectChips",
+  title: "Design System/MultiselectChips",
   component: MultiselectChips,
   tags: ["autodocs"],
   parameters: {

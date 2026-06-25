@@ -2,7 +2,7 @@ import { useState } from "react";
 import Radio from "./Radio";
 
 export default {
-  title: "Components/Radio",
+  title: "Design System/Radio",
   component: Radio,
   tags: ["autodocs"],
   parameters: {
