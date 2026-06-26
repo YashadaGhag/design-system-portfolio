@@ -1,7 +1,8 @@
 import PropTypes from "prop-types";
 
-const ProgressBar = ({ currentStep = 1, totalSteps = 4 }) => {
-  const percentage = (currentStep / totalSteps) * 100;
+const ProgressBar = ({ currentStep = 1, completedSteps, totalSteps = 4 }) => {
+  const fillSteps = completedSteps ?? currentStep;
+  const percentage = (fillSteps / totalSteps) * 100;
 
   return (
     <div className="flex flex-col gap-sp8 items-end w-full">
@@ -19,8 +20,10 @@ const ProgressBar = ({ currentStep = 1, totalSteps = 4 }) => {
 };
 
 ProgressBar.propTypes = {
-  /** Current step number */
+  /** Which question the user is on (shown in label) */
   currentStep: PropTypes.number,
+  /** How many steps completed via Continue (controls fill width) */
+  completedSteps: PropTypes.number,
   /** Total number of steps */
   totalSteps: PropTypes.number,
 };

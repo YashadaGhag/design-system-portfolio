@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const Checkbox = ({ label, checked = false, onChange }) => {
   return (
-    <label className="flex items-center gap-sp4 cursor-pointer">
+    <label className="flex items-center gap-sp8 cursor-pointer">
       <input
         type="checkbox"
         checked={checked}
